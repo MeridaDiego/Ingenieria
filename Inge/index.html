@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Página Principal</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script>
+        // Redirigir dependiendo de los datos ingresados
+        function iniciarSesion(event) {
+            event.preventDefault(); // Evita el envío del formulario
+            const idUsuario = document.getElementById('idUsuario').value;
+            const contrasena = document.getElementById('contrasena').value;
+
+            // Simulación de roles (aquí puedes agregar la lógica real para validar credenciales)
+            if (idUsuario === "usuario" && contrasena === "1234") {
+                window.location.href = 'index_usuario.html'; // Redirige al Usuario
+            } else if (idUsuario === "proveedor" && contrasena === "1234") {
+                window.location.href = 'index_proveedor.html'; // Redirige al Proveedor
+            } else {
+                alert('ID de usuario o contraseña incorrectos. Inténtalo de nuevo.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <header class="bg-primary text-white text-center py-5">
+        <h1>Bienvenido a Nuestro Servicio</h1>
+        <p>Gestión eficiente de inventarios, reservas y más.</p>
+    </header>
+    <main class="container my-5">
+        <!-- Introducción -->
+        <section class="text-center">
+            <h2>¿Qué ofrecemos?</h2>
+            <p>
+                Nuestra plataforma conecta proveedores y clientes para una gestión rápida y eficaz de inventarios y reservas.
+                Puedes explorar catálogos, realizar reservas, y recibir notificaciones importantes desde una sola herramienta.
+            </p>
+        </section>
+        <hr>
+
+        <!-- Formulario de acceso -->
+        <section class="text-center mt-5">
+            <h2>Iniciar Sesión</h2>
+            <p>Ingresa tu ID de usuario y contraseña para acceder:</p>
+            <form onsubmit="iniciarSesion(event)" class="mt-4" style="max-width: 400px; margin: auto;">
+                <div class="form-group mb-3">
+                    <label for="idUsuario" class="form-label">ID de Usuario</label>
+                    <input type="text" id="idUsuario" class="form-control" placeholder="Ingresa tu ID" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="contrasena" class="form-label">Contraseña</label>
+                    <input type="password" id="contrasena" class="form-control" placeholder="Ingresa tu contraseña" required>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg w-100">Ingresar</button>
+            </form>
+        </section>
+        <hr>
+
+        <!-- Acceso rápido mediante botones -->
+        <section class="text-center mt-5">
+            <div class="d-flex justify-content-center gap-4 mt-4">
+                <a href="index_usuario.html" class="btn btn-primary btn-lg">Ingresar como Usuario</a>
+                <a href="index_proveedor.html" class="btn btn-success btn-lg">Ingresar como Proveedor</a>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-light text-center py-3">
+        <p>&copy; 2024 - Diego Mérida Co. Todos los derechos reservados.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

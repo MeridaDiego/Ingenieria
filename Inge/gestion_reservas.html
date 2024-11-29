@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h1>Reservas</h1>
+        <p>A continuación, puedes ver el formulario para registrar una nueva reserva.</p>
+        <form>
+            <table class="table table-bordered mt-4">
+                <thead>
+                    <tr class="table-light">
+                        <th colspan="2">Formulario de Reservas</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><label for="idreserva" class="form-label">ID de Reserva</label></td>
+                        <td>
+                            <input type="number" id="idreserva" class="form-control" placeholder="Ingrese el ID de la reserva" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="fechaReservacion" class="form-label">Fecha de Reserva</label></td>
+                        <td>
+                            <input type="datetime-local" id="fechaReservacion" class="form-control" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="idusuario" class="form-label">ID de Usuario</label></td>
+                        <td>
+                            <input type="number" id="idusuario" class="form-control" placeholder="Ingrese el ID del usuario" required>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td><label for="confirmarreserva" class="form-label">Estado de Confirmación</label></td>
+                        <td>
+                            <select id="confirmarreserva" class="form-select">
+                                <option value="pendiente">Pendiente</option>
+                                <option value="confirmada">Confirmada</option>
+                                <option value="cancelada">Cancelada</option>
+                            </select>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary">Guardar Reserva</button>
+                <button type="reset" class="btn btn-secondary">Limpiar</button>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
